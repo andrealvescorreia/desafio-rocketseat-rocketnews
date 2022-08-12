@@ -1,3 +1,4 @@
+
 /* If the screen size is 1601px wide or more, set the font-size of root to 22px (default was 16px).
    Makes the page more responsible to bigger screens (like 1980p).
 */
@@ -30,36 +31,52 @@ body{
     
     background-color: var(--body-bg-color);
     height: 100vh;
-    display: grid;
-    grid-template-areas: 
-                          "content    side-image";
-    grid-template-columns:   50vw       50vw;
 }
 
 main{
-    grid-area: "content";
-    margin-left: 1.875rem;/* 30/16px */
+    float: left;
+    width: 50%;
+    
+    padding-top: 3.125rem; /* 50/16px */
+    margin-bottom: 1.875rem;
+    padding-left: 1.875rem;/* 30/16px */
+    padding-right: 2rem;
 }
 
 .container-man-reading{
-    grid-area: "side-image";
-    display: flex;
-    justify-content: flex-end;
+    z-index: -1;
+    position: absolute;
+    left: 50vw;
+    
+    width: 50%;
+    height: 100%;
+    display: flex;  
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+    main{
+        width: 100%;    
+    }
+    .container-man-reading {
+        position: static;
+        width: 100%;
+        height: 50%;
+    }
 }
 
 .img-man-reading{
     z-index: -1;
 
-    width: 50vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: 70% 0;
     
 }
 
 .img-logo{
-    width: 24.4rem;/* 390/16px */
-    margin-top: 3.125rem; /* 50/16px */
+    width: 60%;/* 390/16px */
     margin-bottom: 5.75rem;/* 92/16px */
 }
 
@@ -72,7 +89,7 @@ h2{
 }
 
 .text-content{    
-    margin-bottom: 3.15rem;/* 50/16px */
+    margin-bottom: 2.5rem;/* 50/16px */
 }
 
 p{
@@ -142,6 +159,7 @@ a{
     font-weight: 600;
     display: flex;
     align-items: center;
+    
 }
 
 
@@ -157,4 +175,5 @@ https://www.w3schools.com/css/tryit.asp?filename=trycss_forms
 https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
 https://codepen.io/sosuke/pen/Pjoqqp
 https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit
+https://www.w3schools.com/html/html_responsive.asp
 */
